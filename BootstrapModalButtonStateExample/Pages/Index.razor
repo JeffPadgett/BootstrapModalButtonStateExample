@@ -7,7 +7,7 @@
         <InputText id="firstName" class="form-control" placeholder="First Name" @bind-Value="PersonToUpdate.FirstName"/>
         <ValidationMessage For="@(() => PersonToUpdate.FirstName)"/>
     @*//You got the name input, you may want to say some sort of bind where you are passing in the person to update.LastName.*@ 
-        <NameInput OnNameChange="@((e) => PersonToUpdate.LastName = e.ToString())" @bind-/>
+        <NameInput OnNameChange="@((e) => PersonToUpdate.LastName = e.ToString())" />
         <ValidationMessage For="@(() => PersonToUpdate.LastName)"/>
 </EditForm>
 
