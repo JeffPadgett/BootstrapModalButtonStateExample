@@ -9,6 +9,7 @@ namespace BootstrapModalButtonStateExample.Pages
 {
     public partial class Index
     {
-        public Person PersonToUpdate { get; set; } = new Person();
+        public Person PersonToUpdate { get; set; } = new Person() { FirstName = "Tom"};
+        
     }
 }

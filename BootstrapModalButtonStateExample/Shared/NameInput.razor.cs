@@ -7,7 +7,7 @@ namespace BootstrapModalButtonStateExample.Shared
     {
 
         private string _name;
-        [Required]
+
         public string Name
         {
             get => _name;
