@@ -10,6 +10,6 @@
         <NameInput OnNameChange="@((e) => PersonToUpdate.LastName = e.ToString())" />
         <ValidationMessage For="@(() => PersonToUpdate.LastName)"/>
 </EditForm>
-
+ 
 <span>@($"Welcome {PersonToUpdate.FirstName} {PersonToUpdate.LastName}")</span>
 
