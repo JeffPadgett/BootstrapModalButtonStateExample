@@ -1,0 +1,13 @@
+﻿@page "/"
+
+
+<EditForm Model="@PersonToUpdate">
+    <DataAnnotationsValidator/>
+        <TestModal />
+        <InputText id="firstName" class="form-control" placeholder="First Name" @bind-Value="PersonToUpdate.FirstName"/>
+        <ValidationMessage For="@(() => PersonToUpdate.FirstName)"/>
+
+        <NameInput OnNameChange="@((e) => PersonToUpdate.FirstName = e.ToString())" />
+        <ValidationMessage For="@(() => PersonToUpdate.FirstName)"/>
+</EditForm>
+

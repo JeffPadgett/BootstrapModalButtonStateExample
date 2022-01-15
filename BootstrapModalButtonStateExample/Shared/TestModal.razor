@@ -1,0 +1,41 @@
+﻿<div class="col-3">
+    <label for="multipleLoans" class="col-form-label">Does the member have multiple covered loans?</label>
+</div>
+
+<div class="col-3">
+
+    <input type="radio" class="btn-check" name="options-outlined" id="no-outlined" autocomplete="off" checked="@(LoanCount == 0)" value="no" @onclick="@(() => LoanCount = 0)" @onclick:preventDefault="true" preventDefault="true" />
+    <label class="btn btn-outline-danger" for="no-outlined">No</label>
+
+    <input type="radio" class="btn-check" name="options-outlined" data-bs-toggle="modal" checked="@(LoanCount != 0)" data-bs-target="#exampleModal" id="yes-outlined" autocomplete="off" value="yes" @onclick:preventDefault="true" />
+    <label class="btn btn-outline-primary" for="yes-outlined">Yes</label>
+
+    <span id="multipleLoansHelp" class="form-text">@(LoanCount == 0 ? "*" : $" : {LoanCount}")</span>
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">If yes, you do NOT need to complete additional claim forms, CLA will initiate claims for all eligible loans on behalf of the member.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="loanCount" class="col-form-label">Number of Loans: </label>
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="loanCount" class="form-control" @bind="LoanCount">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
